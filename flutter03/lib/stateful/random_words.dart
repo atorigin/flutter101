@@ -17,7 +17,7 @@ class _RandomWords extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(30.0), // 調整 widget 上下左右的偏移量
       // imageBuilder 是一個 callback 會在條件符合時被 call (在 index 大於或等於 0 且小於 itemCount 時被 call)
       itemBuilder: (context, i) {
         if(i.isOdd) return const Divider(color: Colors.deepPurple,);
@@ -45,7 +45,11 @@ class _RandomWords extends State<RandomWords> {
             semanticLabel: alreadySaved ? 'Remove from saved' : 'Save' ,
             ),
           onTap: () {
-            setState(()
+            // 通知 framework 這個物件的 state 被改變，讓 framework 去 schedule 對該 state 物件重 build
+            // () => {} 跟 () {} 類似，反正都是匿名 function。差別在於 => 後面只能接一行，也就是只能有一個 expression，而沒有 => 則是代表是一個 statement 又或者說是一個可以寫多行的 code block
+            // 例如如果用 => 的話，會發現 if-else 完要加上 print 的話會報錯，因為這樣是兩行 code 的概念
+            // 但是如果用 () {} 寫，就可以在 if-else 後面再加上 print，也就意味著可以寫多行
+            setState(() 
               {
                 if(alreadySaved) 
                 {
@@ -54,7 +58,8 @@ class _RandomWords extends State<RandomWords> {
                 else 
                 {
                   _saved.add(_suggestions[index]);
-                }              
+                }
+                print(_suggestions[index]); // 測試有沒有 => 的差別
               }
             );
           },
