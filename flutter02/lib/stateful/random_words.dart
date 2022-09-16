@@ -35,7 +35,7 @@ class _RandomWords extends State<RandomWords> {
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, i) {
         // 如果 i 是奇數，返回一個分隔線 (Divider: 這是一個分隔線的樣式) https://api.flutter.dev/flutter/material/Divider-class.html
-        if(i.isOdd) return const Divider();
+        if(i.isOdd) return const Divider(color: Colors.deepPurple,);
 
         final index = i ~/ 2;
 
