@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-class RandomWords extends StatefulWidget {
-  const RandomWords({super.key});
-  @override
-  State<RandomWords> createState() => _RandomWords();
-}
-
 class _RandomWords extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18);
@@ -37,15 +31,35 @@ class _RandomWords extends State<RandomWords> {
             style: _biggerFont,
           ),
           trailing: Icon(
-            // 判斷 alreadySaved 變數有沒有值，有的話就調整顏色
-            color: alreadySaved ? Colors.red : null,
             // 判斷 alreadySaved 變數有沒有值，有的畫就調整 icon 圖示變成 .favorite 沒有就 .favorite_border
             alreadySaved ? Icons.favorite : Icons.favorite_border,
+            // 判斷 alreadySaved 變數有沒有值，有的話就調整顏色
+            color: alreadySaved ? Colors.red : null,
             // 一樣判斷，若有就顯示提示字 remove from saved 沒有的話就提示 Save
             semanticLabel: alreadySaved ? 'Remove from saved' : 'Save' ,
             ),
+          onTap: () {
+            setState(()
+              {
+                if(alreadySaved) 
+                {
+                  _saved.remove(_suggestions[index]);
+                } 
+                else 
+                {
+                  _saved.add(_suggestions[index]);
+                }              
+              }
+            );
+          },
         );
       },
     );
   }
+}
+
+class RandomWords extends StatefulWidget {
+  const RandomWords({super.key});
+  @override
+  State<RandomWords> createState() => _RandomWords();
 }
