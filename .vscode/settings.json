@@ -15,5 +15,6 @@
         "Git Bash": {
             "source": "Git Bash"
         }
-    }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
 }

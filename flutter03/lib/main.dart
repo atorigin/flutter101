@@ -13,17 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) { // BuildContext 是一個 Widget 處理器，它控管該 Widget 在整個 Widget tree 下的位置
     // 新增 WordPair 亂數生成英文字
     // final wordPair = WordPair.random();
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          //child: Text('Hello World'),
-          child: RandomWords(),
-        ),
-      ),
+      initialRoute: "/",
+      home: RandomWords()
     );
   }
 }
