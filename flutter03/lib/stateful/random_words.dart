@@ -51,6 +51,7 @@ class _RandomWords extends State<RandomWords> {
         actions: [
           IconButton(
             icon: const Icon(Icons.list),
+            // 這邊 onPressed 要一個 callback function (很怪，目前沒辦法完全理解)
             onPressed: () => _pushSaved(),
             tooltip: 'Saved Suggestions',
           )
@@ -58,6 +59,7 @@ class _RandomWords extends State<RandomWords> {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(30.0),
+        // ListView 的 itemBuilder 是一個回呼函數，他僅針對那些可以被看到的地方進行 callback 來重新 build 出可見 item
         itemBuilder: (context, i) {
           if(i.isOdd) return const Divider(color: Colors.deepPurple,);
           
