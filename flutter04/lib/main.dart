@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter04/widgets/button_row.dart';
+import 'package:flutter04/widgets/text_section.dart';
 import 'package:flutter04/widgets/title_row.dart';
 
 void main() {
@@ -18,7 +20,15 @@ class MyApp extends StatelessWidget {
         // 整體頁面只有一個大 Column
         body: Column(
           children: [
+            Image.asset(
+              'assets/lake.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection,
+            buttonSection(context),
+            textSection
           ],
         )
       )
