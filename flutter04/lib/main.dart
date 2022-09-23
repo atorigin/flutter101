@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         // 整體頁面只有一個大 Column
-        body: Column(
+        body: ListView(
           children: [
             Image.asset(
               'assets/lake.jpg',
