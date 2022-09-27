@@ -11,7 +11,7 @@ Widget titleSection = Container(
     children: [
       Expanded(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               padding: const EdgeInsets.only(bottom: 8),
