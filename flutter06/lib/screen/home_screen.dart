@@ -17,11 +17,23 @@ class HomeScreen extends StatelessWidget {
                 },
               child: const Text('Go to Profile'),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             ElevatedButton(
               onPressed: () {
                 context.go("/experience");
               },
               child: const Text("Go to Experience"),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.go('/profile');
+                },
+                child: const Text('Go to Profile'),
+              ),
             )
           ]
         )
