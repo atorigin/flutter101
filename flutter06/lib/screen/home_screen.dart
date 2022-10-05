@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter06/component/app_bar.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,6 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: menuTopBar(context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
