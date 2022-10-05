@@ -11,20 +11,9 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                  context.go('/profile');
-                },
-              child: const Text('Go to Profile'),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                context.go("/experience");
-              },
-              child: const Text("Go to Experience"),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: Image.asset("assets/sonans01.jpg",width: 580, height: 326)
             ),
             Container(
               padding: const EdgeInsets.all(8.0),
@@ -34,7 +23,24 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: const Text('Go to Profile'),
               ),
-            )
+            ),
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+              // style: ElevatedButton.styleFrom(
+              //   backgroundColor: Colors.purple,
+              //   padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              //   textStyle: const TextStyle(
+              //     fontSize: 30,
+              //     fontWeight: FontWeight.bold
+              //   )
+              // ),
+              onPressed: () {
+                context.go("/experience");
+              },
+              child: const Text("Go to Experience"),
+              ),
+            ),
           ]
         )
       ),
